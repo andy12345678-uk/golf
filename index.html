@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Paradise</title>
+    
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        header {
+            background-color: #2a9d8f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav {
+            background-color: #264653;
+            overflow: hidden;
+            animation: slideIn 1s ease-out;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            opacity: 0; /* Initially hidden */
+            animation: fadeInNav 2s forwards; /* Animation for each link */
+        }
+
+        nav a:nth-child(1) { animation-delay: 0.1s; }
+        nav a:nth-child(2) { animation-delay: 0.2s; }
+        nav a:nth-child(3) { animation-delay: 0.3s; }
+        nav a:nth-child(4) { animation-delay: 0.4s; }
+
+        nav a:hover {
+            background-color: #e9c46a;
+        }
+
+        section {
+            padding: 50px 20px;
+        }
+
+        .about, .services, .contact {
+            background-color: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Initially hidden */
+            animation: fadeInSection 1.5s forwards;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .about-text {
+            padding: 20px;
+        }
+
+        /* Explore CTA Button Styling */
+        .cta-button {
+            display: inline-block;
+            background-color: #e9c46a;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            opacity: 0; /* Initially hidden */
+            animation: fadeInButton 2s forwards; /* Fade-in effect for CTA button */
+        }
+
+        .cta-button:hover {
+            background-color: #264653;
+            transform: translateY(-5px); /* Slight lift effect on hover */
+        }
+
+        footer {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInNav {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInSection {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInButton {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hole Paradise</h1>
+        <p>Your premier golf destination</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="Packages.html">Packages</a>
+    </nav>
+
+    <!-- Hero Section or Introduction Section -->
+    <section class="about">
+        <img src="https://i.pinimg.com/1200x/f1/00/e0/f100e08b42b89f297183080d5891443f.jpg" 
+        alt="Golf Paradise Image">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>Part of Portugal Golf Creek Golf & Yacht Club has a prestigious history as Portugal second oldest course, having opened in 1993, as well as being the host to the first-ever golf academy in the Middle East. Boasting an 18-hole par 71 course, DCGYC is a thrilling challenge for any golfer. Our world-class agronomy team ensures that all 18 holes are in pristine condition for all our members and guests.</p>
+            <p>Being part of Portugal Creek Resort, the club has countless activities and experiences on its doorstep.</p>
+            <!-- Explore CTA Button -->
+            <a href="services.html" class="cta-button">Explore</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Golf Paradise | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

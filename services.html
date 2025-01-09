@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Golf Paradise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(120deg, #2a9d8f, #264653);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            background-image: url('https://source.unsplash.com/1600x900/?golf');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-attachment: fixed;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #264653;
+            overflow: hidden;
+            border-bottom: 4px solid #e9c46a;
+        }
+
+        nav a {
+            color: white;
+            padding: 18px 25px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease-in-out;
+            position: relative;
+        }
+
+        nav a:hover {
+            background-color: #e9c46a;
+            color: #264653;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background-color: #264653;
+            transition: width 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #264653;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e9c46a;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Main Section */
+        section {
+            padding: 70px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .services-details {
+            background-color: white;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 1200px;
+            transition: all 0.3s ease;
+        }
+
+        .services-details h2 {
+            color: #2a9d8f;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item img {
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .service-item div {
+            max-width: 700px;
+        }
+
+        .service-item h3 {
+            color: #264653;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .service-item a {
+            text-decoration: none;
+            background-color: #e9c46a;
+            color: #264653;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .service-item a:hover {
+            background-color: #264653;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .service-item img {
+                margin-bottom: 20px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                padding: 14px;
+            }
+
+            .services-details {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Golf Paradise</h1>
+        <p>Your Premier Golf Destination</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <a href="javascript:void(0)">Our Services</a>
+            <div class="dropdown-content">
+                <a href="#golf-courses">Golf Courses</a>
+                <a href="#clubhouses">Clubhouses</a>
+                <a href="#accommodation">Accommodation</a>
+                <a href="#dining">Dining</a>
+                <a href="#pro-shop">Pro Shop</a>
+            </div>
+        </div>
+
+        <a href="Packages.html">Packages</a>
+    </nav>
+
+    <section id="services" class="services-details">
+        <h2>Our Services</h2>
+
+        <!-- Golf Courses -->
+        <div class="service-item" id="golf-courses">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBhdGqaCAq9_SZvtprgozK2LVfv74esiD2Pw&s" alt="Golf Course">
+            <div>
+                <h3>Three Championship Golf Courses</h3>
+                <p>The facility boasts three professionally designed championship golf courses, each tailored to offer a unique challenge and an exceptional experience for players of all skill levels. The Sea View Course is renowned for its spectacular coastal vistas and strategic layout.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Clubhouses -->
+        <div class="service-item" id="clubhouses">
+            <img src="https://static01.nyt.com/images/2022/09/10/multimedia/10sp-golflhomes-clubhouse-inyt1/merlin_212112462_30324cfc-2161-4ffb-bcbb-06979ac481ac-articleLarge.jpg?quality=75&auto=webp&disable=upscale" alt="Clubhouse">
+            <div>
+                <h3>Two Luxurious Clubhouses</h3>
+                <p>The clubhouses offer a luxurious and welcoming environment, with comfortable lounges, private lockers, and exclusive dining areas. They provide the perfect space for relaxation, social events, and business meetings.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Accommodation -->
+        <div class="service-item" id="accommodation">
+            <img src="https://static01.nyt.com/images/2022/09/10/multimedia/10sp-golflhomes-clubhouse-inyt1/merlin_212112462_30324cfc-2161-4ffb-bcbb-06979ac481ac-articleLarge.jpg?quality=75&auto=webp&disable=upscale" alt="Hotel Accommodation">
+            <div>
+                <h3>On-Site Hotel Accommodation</h3>
+                <p>For extended stays, our on-site hotel offers luxurious rooms and suites. With stunning views of the golf course, it provides the perfect blend of comfort, convenience, and luxury.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Dining -->
+        <div class="service-item" id="dining">
+            <img src="https://www.shutterstock.com/image-photo/closeup-image-man-woman-clinking-600nw-1937522521.jpg" alt="Dining">
+            <div>
+                <h3>Restaurants & Café</h3>
+                <p>Indulge in a variety of gourmet dining options, from locally sourced specialties to international favorites. Our on-site restaurants and café provide a perfect culinary experience for every occasion.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Pro Shop -->
+        <div class="service-item" id="pro-shop">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZeMqOZ8d_fxpuvbPhwQr9HTP6yOM62Bgc0Q&s" alt="Pro Shop">
+            <div>
+                <h3>Pro Shop</h3>
+                <p>Our pro shop is equipped with the latest golf equipment, apparel, and accessories. Whether you're a seasoned pro or a beginner, we have everything you need to enhance your game.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Golf Paradise | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Resort Packages</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #169464, #0e7c57);
+            color: #fff;
+            padding: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+
+        nav {
+            background-color: #264653;
+            overflow: hidden;
+        }
+ 
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+ 
+        nav a:hover {
+            background-color: #e9c46a;
+        }
+
+        main {
+            padding: 30px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .package {
+            background-color: white;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .package img {
+            max-width: 220px;
+            margin-right: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .package img:hover {
+            transform: scale(1.05);
+        }
+
+        .package h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .package ul {
+            list-style-type: disc;
+            padding-left: 25px;
+            color: #7f8c8d;
+        }
+
+        .button {
+            background-color: #169464;
+            width: 180px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        .button:hover {
+            background-color: #0e7c57;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 10px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+            font-size: 1em;
+            font-weight: normal;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-button {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            width: 180px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-button:hover {
+            background-color: #1f6f97;
+        }
+
+        .custom-packages {
+            text-align: center;
+            background-color: #ecf0f1;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .custom-packages h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .custom-packages a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .package {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .package img {
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .button {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Exclusive Golf Packages</h1>
+        <p>Choose the perfect package for your golfing getaway.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="Packages.html">Packages</a>
+    </nav>
+    <main>
+        <section class="package">
+            <img src="https://media.istockphoto.com/id/1050564510/photo/3d-rendering-beautiful-luxury-bedroom-suite-in-hotel-with-tv.jpg?s=612x612&w=0&k=20&c=ZYEso7dgPl889aYddhY2Fj3GOyuwqliHkbbT8pjl_iM=" alt="Five Rounds Package Image">
+            <div>
+                <h2>Five Rounds</h2>
+                <ul>
+                    <li>Five-night full board stay in a luxury suite</li>
+                    <li>Five 18-hole rounds</li>
+                    <li>One guaranteed round on the famous Sea View course</li>
+                    <li>Complimentary digital coaching session</li>
+                </ul>
+                <div class="dropdown">
+                    <button class="button" onclick="toggleDropdown('dropdown1')">Click to know more</button>
+                    <div id="dropdown1" class="dropdown-content">
+                        <a href="Five Round.html">Detailed Package Information</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Reviews</a>
+                    </div>
+
+                    <button class="dropdown-button" onclick="toggleDropdown('dropdown1')">More Options</button>
+                </div>
+            </div>
+        </section>
+        <section class="package">
+            <img src="https://triple-tree.hotels-saudi-arabia.com/data/Pics/OriginalPhoto/14195/1419562/1419562212/triple-tree-al-hofuf-pic-30.JPEG" alt="Triple Tee Package Image">
+            <div>
+                <h2>Triple Tee</h2>
+                <ul>
+                    <li>Two-night stay in a double room with breakfast</li>
+                    <li>Three 18-hole rounds, including one on the famous Sea View course (if available)</li>
+                    <li>Complimentary buggy hire</li>
+                    <li>20% discount at the pro shop</li>
+                </ul>
+                <div class="dropdown">
+                    <button class="button" onclick="toggleDropdown('dropdown2')">Click to know more</button>
+                    <div id="dropdown2" class="dropdown-content">
+                        <a href="Triple Tee.html">Detailed Package Information</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Reviews</a>
+                    </div>
+                    <button class="dropdown-button" onclick="toggleDropdown('dropdown2')">More Options</button>
+                </div>
+            </div>
+        </section>
+        <section class="package">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl1bIkjEyNiLfr_f_ImaeA_g9lLkuNzThi_w&s" alt="Getaway Break Package Image">
+            <div>
+                <h2>Getaway Break</h2>
+                <ul>
+                    <li>Overnight stay with full breakfast</li>
+                    <li>Dinner in any of the resort’s restaurants</li>
+                    <li>Access to courses (charges will apply; excludes the Sea View course)</li>
+                    <li>Complimentary club hire</li>
+                </ul>
+                <div class="dropdown">
+                    <button class="button" onclick="toggleDropdown('dropdown3')">Click to know more</button>
+                    <div id="dropdown3" class="dropdown-content">
+                        <a href="Getaway Package.html">Detailed Package Information</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Reviews</a>
+                    </div>
+                    <button class="dropdown-button" onclick="toggleDropdown('dropdown3')">More Options</button>
+                </div>
+            </div>
+        </section>
+        <section class="custom-packages">
+            <h2>Custom Packages</h2>
+            <p>Custom packages are available for corporate events and longer stays. Please <a href="contact.html">contact us</a> to arrange your custom package.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Golf Resort. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
